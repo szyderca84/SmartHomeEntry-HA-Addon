@@ -6,7 +6,7 @@ Zapewnia bezpieczny zdalny dostęp do Twojego Home Assistant przez szyfrowany tu
 
 1. Dodaj repozytorium add-onów w Home Assistant:
    - **Supervisor → Add-on Store → ⋮ → Repositories**
-   - Wklej URL: `https://github.com/szyderca84/SmartHomeEntry-HA-Addon-`
+   - Wklej URL: `https://github.com/szyderca84/SmartHomeEntry-HA-Addon`
 
 2. Znajdź **SmartHomeEntry Agent** na liście i kliknij **Install**.
 

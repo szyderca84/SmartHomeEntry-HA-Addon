@@ -2,10 +2,10 @@ ARG BUILD_FROM
 
 # --- Build agent from source ---
 FROM golang:1.22-alpine AS builder
+RUN apk add --no-cache git
 WORKDIR /src
-COPY ../go.mod ../go.sum ./
+RUN git clone --depth 1 https://github.com/szyderca84/SmartHomeEntry-Agent.git .
 RUN go mod download
-COPY ../ .
 ARG TARGETARCH
 RUN CGO_ENABLED=0 GOARCH=${TARGETARCH} go build -ldflags="-s -w" \
     -o /smarthomeentry-agent ./cmd/agent

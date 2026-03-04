@@ -6,8 +6,8 @@ RUN apk add --no-cache git
 WORKDIR /src
 RUN git clone --depth 1 https://github.com/szyderca84/SmartHomeEntry-Agent.git .
 RUN go mod download
-ARG TARGETARCH
-RUN CGO_ENABLED=0 GOARCH=${TARGETARCH} go build -ldflags="-s -w" \
+# Go detects GOARCH from the host platform; no need to override
+RUN CGO_ENABLED=0 go build -ldflags="-s -w" \
     -o /smarthomeentry-agent ./cmd/agent
 
 # --- Final image ---
